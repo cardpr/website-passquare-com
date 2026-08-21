@@ -21,7 +21,7 @@
   font-style: normal;
   font-weight: 400;
   src: url('/assets/external/static.tildacdn.com/fonts/tildasans/TildaSans-Regular.eot');
-  src: url('/assets/external/static.tildacdn.com/fonts/tildasans/TildaSans-Regular.eot') format('embedded-opentype'),
+  src: url('/assets/external/static.tildacdn.com/fonts/tildasans/TildaSans-Regular.eot?#iefix') format('embedded-opentype'),
        url('/assets/external/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff2') format('woff2-variations'),
        url('/assets/external/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff') format('woff-variations'),  
        url('/assets/external/static.tildacdn.com/fonts/tildasans/TildaSans-Regular.woff2') format('woff2'),
@@ -76,7 +76,7 @@
   font-style: normal;
   font-weight: 900;
   src: url('/assets/external/static.tildacdn.com/fonts/tildasans/TildaSans-Black.eot');
-  src: url('/assets/external/static.tildacdn.com/fonts/tildasans/TildaSans-Black.eot') format('embedded-opentype'),
+  src: url('/assets/external/static.tildacdn.com/fonts/tildasans/TildaSans-Black.eot?#iefix') format('embedded-opentype'),
        url('/assets/external/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff2') format('woff2-variations'),
        url('/assets/external/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff') format('woff-variations'),  
        url('/assets/external/static.tildacdn.com/fonts/tildasans/TildaSans-Black.woff2') format('woff2'),
