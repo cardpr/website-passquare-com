@@ -1,5 +1,9 @@
 RewriteEngine On
 
+RewriteRule ^help/integration/iiko-self/?$ /help/integration/syrve-self [R=301,L]
+RewriteRule ^help/integration/iiko/?$ /help/integration/syrve [R=301,L]
+RewriteRule ^help/settings/certificate-ooo/?$ /help/settings/certificate-company [R=301,L]
+
 RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
 RewriteCond %{HTTP_HOST} !^localhost(:[0-9]+)?$ [NC]

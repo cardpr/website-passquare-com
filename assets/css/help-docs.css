@@ -1,0 +1,38 @@
+/* Passquare help documentation */
+.help-page { padding-bottom: 90px; font-family: 'TildaSans', Arial, sans-serif; }
+.help-page a { color: #007aff; text-decoration: none; }
+.help-page a:hover { text-decoration: underline; }
+.help-wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+.help-back { padding-top: 153px; padding-bottom: 16px; font-size: 18px; font-weight: 400; }
+.help-wrap > .help-title:first-child { padding-top: 153px; }
+.help-title { font-size: 48px; line-height: 1.15; font-weight: 600; margin: 0 0 32px; }
+.help-lead { font-size: 20px; line-height: 1.4; font-weight: 600; color: #000; opacity: 0.5; margin: -16px 0 40px; }
+.help-h2 { font-size: 24px; font-weight: 600; margin: 36px 0 12px; }
+.help-h3 { font-size: 18px; font-weight: 600; margin: 28px 0 10px; }
+.help-body { font-size: 16px; line-height: 1.875; color: #2e2e2e; }
+.help-body p { margin: 0 0 14px; }
+.help-body ul, .help-body ol { margin: 0 0 16px; padding-left: 22px; }
+.help-body li { margin: 0 0 6px; }
+.help-body strong { font-weight: 600; }
+.help-note { background: #f3f3f3; padding: 16px 18px; margin: 0 0 18px; }
+.help-toc-section { margin: 0 0 8px; padding-top: 28px; border-top: 1px solid rgba(0,0,0,0.1); }
+.help-toc-section:first-of-type { border-top: 0; padding-top: 8px; }
+.help-toc-section h2 { font-size: 30px; font-weight: 600; margin: 0 0 16px; }
+.help-page .help-toc-section h2 a,
+.help-page .help-toc-section h2 a:visited,
+.help-page .help-toc-section h2 a:hover {
+  color: #000 !important;
+}
+.help-toc-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px 24px; margin: 0 0 20px; }
+.help-toc-grid a { font-size: 18px; line-height: 1.5; color: #007aff; }
+.help-list { list-style: none; padding: 0; margin: 8px 0 0; }
+.help-list li { border-top: 1px solid rgba(0,0,0,0.1); padding: 14px 0; }
+.help-list a { font-size: 18px; }
+@media screen and (max-width: 480px) {
+  .help-back { padding-top: 48px; padding-bottom: 8px; font-size: 16px; }
+  .help-wrap > .help-title:first-child { padding-top: 48px; }
+  .help-title { font-size: 32px; }
+  .help-lead { font-size: 18px; }
+  .help-toc-section h2 { font-size: 24px; }
+  .help-toc-grid { grid-template-columns: 1fr; }
+}
