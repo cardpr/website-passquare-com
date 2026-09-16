@@ -1390,6 +1390,13 @@ body.legal .prose {
   line-height: 1.15;
 }
 
+.plan .price__period {
+  font-family: var(--sans);
+  font-size: 0.55em;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
 .plan .btn {
   width: 100%;
 }
