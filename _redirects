@@ -1,2 +1,8 @@
 /integrations/api /api 301
 /integrations/api/ /api 301
+/help/api /api 301
+/help/api/ /api 301
+/extra / 301
+/extra/ / 301
+/materials / 301
+/materials/ / 301
