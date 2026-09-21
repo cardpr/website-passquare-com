@@ -433,7 +433,7 @@ a:hover .logo-mark__stem {
 }
 
 .facts > .fact {
-  margin-bottom: 0;
+  margin-bottom: 72px;
 }
 
 .facts__intro {
@@ -1660,7 +1660,7 @@ a.logo-card:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  padding: 0 0 32px;
+  padding: 0 0 72px;
 }
 
 .pricing-toolbar {
@@ -1988,6 +1988,108 @@ section.story {
 
 .story-band p {
   color: rgba(255, 255, 255, 0.72);
+}
+
+body.int-page {
+  background: #fff;
+}
+
+body.int-page .header {
+  background: color-mix(in srgb, #fff 88%, transparent);
+}
+
+body.int-page .nav {
+  background: #fff;
+}
+
+.int-sec {
+  padding: 40px 0 48px;
+}
+
+.int-block {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+}
+
+.int-copy {
+  max-width: 46em;
+}
+
+.int-copy h2,
+.int-copy h3 {
+  margin: 0 0 14px;
+  font-family: var(--display);
+  letter-spacing: -0.04em;
+}
+
+.int-copy h2 {
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.int-copy h3 {
+  font-size: clamp(22px, 2.4vw, 28px);
+}
+
+.int-copy p,
+.int-copy li {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.int-copy p:last-child,
+.int-copy ul:last-child {
+  margin-bottom: 0;
+}
+
+.int-copy ul {
+  margin: 0 0 16px;
+  padding-left: 22px;
+}
+
+.int-pair,
+.story-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  gap: 16px;
+  width: min(100%, 960px);
+  margin-inline: auto;
+  min-width: 0;
+}
+
+.int-media {
+  display: flex;
+  justify-content: center;
+  width: min(100%, 960px);
+  min-width: 0;
+  margin-inline: auto;
+  padding: 0;
+  background: transparent;
+}
+
+.int-media--white,
+.int-media--black,
+.int-media--soft,
+.int-media--ui {
+  background: transparent;
+  padding: 0;
+}
+
+.int-media img,
+.int-pair img,
+.story-pair img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0 auto;
+  object-fit: contain;
+  background: none;
+  border: 0;
+  box-shadow: none;
 }
 
 .story-results {
