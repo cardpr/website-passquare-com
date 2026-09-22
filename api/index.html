@@ -52,9 +52,14 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Unbounded:wght@500;800&display=swap"
     />
-    <link rel="stylesheet" href="/css/site.css?v=20260919f" />
-    <link rel="stylesheet" href="/assets/css/highlight.min.css?v=20260916" />
-    <link rel="stylesheet" href="/assets/css/api-docs.css?v=20260916" />
+    <script>
+      document.write('<script src="/js/version.js?t=' + Date.now() + '"><\/script>');
+    </script>
+    <script>
+      siteCss("/css/site.css");
+      siteCss("/assets/css/highlight.min.css");
+      siteCss("/assets/css/api-docs.css");
+    </script>
   </head>
   <body>
     <a class="skip" href="#content">Skip to content</a>
@@ -796,9 +801,11 @@ echo curl_exec($ch);
         style="position: absolute; left: -9999px"
       />
     </noscript>
-    <script src="/js/logo-press.js?v=20260919f" defer></script>
-    <script src="/js/site.js?v=20260919f" defer></script>
-    <script src="/assets/js/highlight.min.js?v=20260916" charset="utf-8"></script>
-    <script src="/assets/js/api-docs.js?v=20260916" charset="utf-8"></script>
+    <script>
+      siteJs("/js/logo-press.js", "defer");
+      siteJs("/js/site.js", "defer");
+      siteJs("/assets/js/highlight.min.js", "charset=\"utf-8\"");
+      siteJs("/assets/js/api-docs.js", "charset=\"utf-8\"");
+    </script>
   </body>
 </html>
