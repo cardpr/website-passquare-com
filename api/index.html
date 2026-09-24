@@ -640,7 +640,10 @@
                 <div class="api-method__head">
                   <h3>2.4 setPrivileges</h3>
                 </div>
-                <p>Hook to set bonus and discount.</p>
+                <p>
+                  Hook to set the bonus percent and the discount percent. These are percentage rates,
+                  not the bonus balance.
+                </p>
                 <div class="api-url"><span class="api-badge">POST</span> HTTPS webhook URL</div>
                 <div class="api-label">Request</div>
                 <div class="api-code">
@@ -656,7 +659,8 @@
 }</code></pre>
                 </div>
                 <p>
-                  Store the new privileges for the customer. The hook sends only the fields that
+                  Store the new rates for the customer: <code>bonus</code> is the bonus percent,
+                  <code>discount</code> is the discount percent. The hook sends only the fields that
                   changed: <code>bonus</code> alone, <code>discount</code> alone, or both at once.
                   Leave a field unchanged when it is absent from the request.
                 </p>
