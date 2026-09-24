@@ -36,13 +36,6 @@
     }
   }
 
-  document.querySelectorAll('a[href="#sales"]').forEach(function (link) {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      if (window.$chatwoot) window.$chatwoot.toggle();
-    });
-  });
-
   var PREFIX = "pq_cookie_";
   var UTMS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
   var params = new URLSearchParams(window.location.search);
@@ -83,26 +76,6 @@
         link.href = url.toString();
       } catch (err) {}
     });
-  }
-
-  var path = (window.location.pathname || "").replace(/\/+$/, "") || "/";
-  var skipChatwoot =
-    (document.body && document.body.classList.contains("legal")) || path === "/offer";
-  if (!skipChatwoot) {
-    window.chatwootSettings = { locale: "en" };
-    (function (d, t) {
-      var g = d.createElement(t);
-      var s = d.getElementsByTagName(t)[0];
-      g.src = "https://app.chatwoot.com/packs/js/sdk.js";
-      g.async = true;
-      s.parentNode.insertBefore(g, s);
-      g.onload = function () {
-        window.chatwootSDK.run({
-          websiteToken: "7TJ8jcxZEZBhebCwkAMz3d2r",
-          baseUrl: "https://app.chatwoot.com"
-        });
-      };
-    })(document, "script");
   }
 
   window.dataLayer = window.dataLayer || [];
