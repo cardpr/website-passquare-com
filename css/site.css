@@ -2384,10 +2384,7 @@ body.int-page .nav {
 }
 
 .contact-card--expert {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 20px 28px;
-  align-items: center;
+  display: flow-root;
   margin-bottom: 18px;
 }
 
@@ -2396,18 +2393,17 @@ body.int-page .nav {
 }
 
 .contact__pair .contact-card--expert {
-  align-items: start;
-  align-content: start;
   margin-bottom: 0;
 }
 
 .contact-card--expert img {
+  float: right;
   width: 112px;
   height: 112px;
   object-fit: cover;
   object-position: center 18%;
   border-radius: 50%;
-  margin: 0;
+  margin: 0 0 8px 28px;
 }
 
 .contact-card--expert a {
@@ -2443,13 +2439,8 @@ body.int-page .nav {
 @media (max-width: 900px) {
   .contact__grid,
   .contact__pair,
-  .contact-card--mark,
-  .contact-card--expert {
+  .contact-card--mark {
     grid-template-columns: 1fr;
-  }
-
-  .contact__pair .contact-card--expert {
-    grid-template-columns: minmax(0, 1fr) auto;
   }
 
   .city-grid {
