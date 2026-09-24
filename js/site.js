@@ -60,6 +60,17 @@
     var cookiePart = part.trim();
     if (cookiePart.indexOf(PREFIX) === 0) extras.push(cookiePart.slice(PREFIX.length));
   });
+  document.querySelectorAll(".js-contact-email").forEach(function (el) {
+    var local = el.getAttribute("data-a");
+    var domain = el.getAttribute("data-b");
+    if (!local || !domain) return;
+    var email =
+      local.split("").reverse().join("") +
+      "@" +
+      domain.split("").reverse().join("");
+    el.textContent = email;
+  });
+
   if (extras.length) {
     document.querySelectorAll("a[href]").forEach(function (link) {
       try {
