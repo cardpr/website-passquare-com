@@ -132,6 +132,7 @@
             <a class="api-nav__method" href="#createCustomer">2.1 createCustomer</a>
             <a class="api-nav__method" href="#readBalance">2.2 readBalance</a>
             <a class="api-nav__method" href="#addBalance">2.3 addBalance</a>
+            <a class="api-nav__method" href="#setPrivileges">2.4 setPrivileges</a>
             <div class="api-nav__group">More</div>
             <a href="#notes">Notes</a>
           </nav>
@@ -152,6 +153,7 @@
                 <option value="createCustomer">2.1 createCustomer</option>
                 <option value="readBalance">2.2 readBalance</option>
                 <option value="addBalance">2.3 addBalance</option>
+                <option value="setPrivileges">2.4 setPrivileges</option>
                 <option value="notes">Notes</option>
               </select>
             </div>
@@ -605,7 +607,7 @@
                 <div class="api-method__head">
                   <h3>2.3 addBalance</h3>
                 </div>
-                <p>Hook to credit bonuses.</p>
+                <p>Hook to credit and write off bonuses.</p>
                 <div class="api-url"><span class="api-badge">POST</span> HTTPS webhook URL</div>
                 <div class="api-label">Request</div>
                 <div class="api-code">
@@ -622,9 +624,66 @@
 }</code></pre>
                 </div>
                 <p>
-                  Credit the customer identified by phone and card number. If
+                  Credit the customer identified by phone and card number. For a write-off the hook
+                  sends a negative <code>sum</code>, for example <code>-50.00</code>. If
                   <code>lifetime</code> is passed, that credit expires after that many days (24h).
                 </p>
+                <div class="api-label">Response</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "success": true
+}</code></pre>
+                </div>
+              </article>
+
+              <article class="api-method" id="setPrivileges">
+                <div class="api-method__head">
+                  <h3>2.4 setPrivileges</h3>
+                </div>
+                <p>Hook to set bonus and discount.</p>
+                <div class="api-url"><span class="api-badge">POST</span> HTTPS webhook URL</div>
+                <div class="api-label">Request</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "crm_key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "method": "setPrivileges",
+  "customer": {
+    "phone": "+420000000001",
+    "cardNumbers": ["120"],
+    "bonus": 10.00,
+    "discount": 5.00
+  }
+}</code></pre>
+                </div>
+                <p>
+                  Store the new privileges for the customer. The hook sends only the fields that
+                  changed: <code>bonus</code> alone, <code>discount</code> alone, or both at once.
+                  Leave a field unchanged when it is absent from the request.
+                </p>
+                <div class="api-label">bonus only</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "crm_key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "method": "setPrivileges",
+  "customer": {
+    "phone": "+420000000001",
+    "cardNumbers": ["120"],
+    "bonus": 10.00
+  }
+}</code></pre>
+                </div>
+                <div class="api-label">discount only</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "crm_key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "method": "setPrivileges",
+  "customer": {
+    "phone": "+420000000001",
+    "cardNumbers": ["120"],
+    "discount": 5.00
+  }
+}</code></pre>
+                </div>
                 <div class="api-label">Response</div>
                 <div class="api-code">
                   <pre><code class="language-json">{
