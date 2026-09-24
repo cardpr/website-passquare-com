@@ -2301,19 +2301,8 @@ body.int-page .nav {
   background: var(--white);
 }
 
-.contact__grid .contact-card:nth-child(even) {
-  background: var(--ink);
-  color: var(--white);
-}
-
-.contact__grid .contact-card:nth-child(even) p,
-.contact__grid .contact-card:nth-child(even) p strong {
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.contact__grid .contact-card:nth-child(even) p:first-child,
-.contact__grid .contact-card:nth-child(even) p:first-child strong {
-  color: var(--white);
+.contact-card--shade {
+  background: #d8d4cc;
 }
 
 .contact-card p {
@@ -2370,14 +2359,106 @@ body.int-page .nav {
   margin: 0;
 }
 
+.contact__pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+  align-items: stretch;
+}
+
+.contact__pair .contact-card--mark {
+  grid-template-columns: 1fr;
+  align-items: start;
+  align-content: start;
+  gap: 16px;
+}
+
+.contact__pair .contact-card--mark p:first-child {
+  max-width: none;
+}
+
+.contact__pair .contact-card--mark img {
+  max-width: none;
+  justify-self: stretch;
+}
+
+.contact-card--expert {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px 28px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.contact__pair .contact-card {
+  padding: 28px;
+}
+
+.contact__pair .contact-card--expert {
+  align-items: start;
+  align-content: start;
+  margin-bottom: 0;
+}
+
+.contact-card--expert img {
+  width: 112px;
+  height: 112px;
+  object-fit: cover;
+  object-position: center 18%;
+  border-radius: 50%;
+  margin: 0;
+}
+
+.contact-card--expert a {
+  overflow-wrap: anywhere;
+}
+
+.contact-geo__title {
+  margin: 48px 0 0;
+  font-family: var(--display);
+  font-size: clamp(24px, 3.2vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px 28px;
+  margin: 24px 0 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.85;
+}
+
+.city-grid p {
+  margin: 0;
+}
+
 @media (max-width: 900px) {
   .contact__grid,
-  .contact-card--mark {
+  .contact__pair,
+  .contact-card--mark,
+  .contact-card--expert {
     grid-template-columns: 1fr;
   }
 
+  .contact__pair .contact-card--expert {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .city-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .contact-card,
-  .contact-card--mark {
+  .contact-card--mark,
+  .contact__pair .contact-card {
     padding: 24px 20px;
   }
 
