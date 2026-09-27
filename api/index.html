@@ -128,6 +128,7 @@
             <a class="api-nav__method" href="#read_customers">1.4 read_customers</a>
             <a class="api-nav__method" href="#push-create">1.5 push/create</a>
             <a class="api-nav__method" href="#push-send">1.6 push/send</a>
+            <a class="api-nav__method" href="#event-send">1.7 event/send</a>
             <div class="api-nav__group">Passquare → your system</div>
             <a class="api-nav__method" href="#createCustomer">2.1 createCustomer</a>
             <a class="api-nav__method" href="#readBalance">2.2 readBalance</a>
@@ -149,6 +150,7 @@
                 <option value="read_customers">1.4 read_customers</option>
                 <option value="push-create">1.5 push/create</option>
                 <option value="push-send">1.6 push/send</option>
+                <option value="event-send">1.7 event/send</option>
                 <option value="inbound">Passquare → your system</option>
                 <option value="createCustomer">2.1 createCustomer</option>
                 <option value="readBalance">2.2 readBalance</option>
@@ -501,6 +503,56 @@
                   <pre><code class="language-json">{
   "app_key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "push_uuid": "00000000-0000-0000-0000-000000000000"
+}</code></pre>
+                </div>
+              </article>
+
+              <article class="api-method" id="event-send">
+                <a name="event/send"></a>
+                <div class="api-method__head">
+                  <h3>1.7 event/send</h3>
+                </div>
+                <p>
+                  Send an event for a customer. <code>app_key</code>, <code>event</code> and one customer
+                  identifier are required: <code>phone</code>, <code>card</code> or <code>remoteId</code>.
+                  The <code>event</code> key is created in the Events section of the account.
+                  <code>value</code> is an optional string of up to 100 characters. Phone is in E.164 format.
+                </p>
+                <div class="api-url">
+                  <span class="api-badge">POST</span>
+                  https://core.passquare.com/api/v2/crm/event/send
+                </div>
+                <div class="api-label">Request with phone</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "app_key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "phone": "+79111111111",
+  "event": "site_visit",
+  "value": "promo"
+}</code></pre>
+                </div>
+                <div class="api-label">Request with card</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "app_key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "card": "1000123456",
+  "event": "site_visit",
+  "value": "promo"
+}</code></pre>
+                </div>
+                <div class="api-label">Request with remoteId</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "app_key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "remoteId": "crm-42",
+  "event": "site_visit",
+  "value": "promo"
+}</code></pre>
+                </div>
+                <div class="api-label">Response</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "success": true
 }</code></pre>
                 </div>
               </article>
