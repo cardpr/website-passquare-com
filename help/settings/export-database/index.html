@@ -14,14 +14,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="yandex-verification" content="533e82f833c83b26" />
-    <title>Settings</title>
-    <meta name="description" content="Settings" />
-    <meta property="og:url" content="https://passquare.com/help/settings" />
-    <meta property="og:title" content="Settings" />
-    <meta property="og:description" content="Settings" />
+    <title>Export the customer database</title>
+    <meta name="description" content="How to allow a CSV export of the customer database, request the file, and read the export journal." />
+    <meta property="og:url" content="https://passquare.com/help/settings/export-database" />
+    <meta property="og:title" content="Export the customer database" />
+    <meta property="og:description" content="How to allow a CSV export of the customer database, request the file, and read the export journal." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://passquare.com/assets/images/passquare-cab.png" />
-    <link rel="canonical" href="https://passquare.com/help/settings" />
+    <link rel="canonical" href="https://passquare.com/help/settings/export-database" />
     <meta name="format-detection" content="telephone=no" />
     <link
       rel="icon"
@@ -106,48 +106,106 @@
     <main id="content">
       <div class="help-page doc">
               <div class="wrap">
-                <div class="help-back"><a href="/help">‹ Documentation</a></div>
-                <h1 class="help-title">Settings</h1>
-                <ul class="help-list">
-                  <li><a href="/help/settings/add-new-variable">Add a custom field</a></li>
-                  <li><a href="/help/settings/add-new-user">Add a new user</a></li>
-                  <li><a href="/help/settings/export-database">Export the customer database</a></li>
-                  <li>
-                    <a href="/help/settings/why-need-certificate">Why you need your own certificate</a>
-                  </li>
-                  <li>
-                    <a href="/help/settings/certificate-ip"
-                      >Create an Apple Developer account for an individual</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/help/settings/certificate-company"
-                      >Create an Apple Developer account for a company</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/help/settings/certificate-create-p12"
-                      >Get and renew a Pass Type ID certificate</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/help/settings/certificate-create-p12-mac"
-                      >Get a Pass Type ID certificate (Mac)</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/help/settings/certificate-create-nfc"
-                      >Get a Pass Type ID with NFC certificate</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/help/settings/certificate-create-issuerid">Issue Google Wallet cards</a>
-                  </li>
-                  <li><a href="/help/settings/pay-apple-developer">Pay for the Apple Developer Program</a></li>
-                  <li>
-                    <a href="/help/settings/update-certificate">Update the Apple Wallet certificate</a>
-                  </li>
-                </ul>
+                <div class="help-back"><a href="/help/settings">‹ Settings</a></div>
+                <h1 class="help-title">Export the customer database</h1>
+                <div class="help-body">
+                  <p>
+                    Export saves the customer database to a CSV file for a selected period and emails
+                    the archive to the user who requested it. The file contains personal data: contact
+                    details, card information, balance, bonuses, and discount.
+                  </p>
+                  <p>
+                    If a CRM is connected to the account, customer data is synced with it. The same
+                    data can also be retrieved through the API. Use export when you need a file for a
+                    specific period.
+                  </p>
+                  <h2 class="help-h2">Where to find export</h2>
+                  <p>
+                    Open <strong>Settings</strong> and go to the <strong>Export</strong> tab. The file
+                    cannot be requested from the <strong>Customers</strong> page.
+                  </p>
+                  <h2 class="help-h2">How to allow export</h2>
+                  <p>
+                    The tab has a switch labeled <strong>Allow export of the customer database to CSV</strong>.
+                    While it is off, the <strong>Export CSV</strong> button is disabled and a new file
+                    cannot be requested.
+                  </p>
+                  <p>To turn export on:</p>
+                  <ol>
+                    <li>Click the switch.</li>
+                    <li>
+                      Read the warning: the file contains customers’ personal data, you can request it
+                      no more than once a day, and only for a period of one month or less.
+                    </li>
+                    <li>Check the agreement box and click <strong>Enable</strong>.</li>
+                  </ol>
+                  <p>
+                    By enabling export you confirm that you do so on a lawful basis and that you are
+                    responsible for any later use, storage, and sharing of the exported data.
+                  </p>
+                  <p>
+                    To stop new exports, turn the same switch off. Requests that were already made
+                    stay in the journal.
+                  </p>
+                  <p>
+                    A user with view-only access cannot turn export on and cannot request a file.
+                  </p>
+                  <h2 class="help-h2">How to request a file</h2>
+                  <ol>
+                    <li>Open <strong>Settings</strong> → <strong>Export</strong>.</li>
+                    <li>Make sure export is allowed.</li>
+                    <li>Under the journal, click <strong>Export CSV</strong>.</li>
+                    <li>Set <strong>Start of selection</strong> and <strong>End of selection</strong>.</li>
+                    <li>Check the agreement to request personal data and click <strong>Export</strong>.</li>
+                  </ol>
+                  <p>Request limits:</p>
+                  <ul>
+                    <li>an export can be started no more than once a day;</li>
+                    <li>the interval from the start date to the end date is one month at most;</li>
+                    <li>the end date cannot be earlier than the start date;</li>
+                    <li>export is unavailable during the demo period.</li>
+                  </ul>
+                  <p>
+                    The file includes customers registered in the account from the start date through
+                    the end date, inclusive.
+                  </p>
+                  <p>
+                    The finished archive arrives within a few hours at the email address you used to
+                    sign in. It is a ZIP archive containing <strong>export.csv</strong>. The archive
+                    name includes the period, for example
+                    <strong>export_01-09-2026_28-09-2026.zip</strong>.
+                  </p>
+                  <h2 class="help-h2">What is in the file</h2>
+                  <p>The CSV includes columns for:</p>
+                  <ul>
+                    <li>first name, last name, and middle name;</li>
+                    <li>email and phone;</li>
+                    <li>the customer’s registration date and IP address;</li>
+                    <li>date of birth;</li>
+                    <li>card form, template, and modifier;</li>
+                    <li>card number and track;</li>
+                    <li>balance, bonus, and discount;</li>
+                    <li>whether the card is installed on a device;</li>
+                    <li>extra customer fields, if they are filled in for the account.</li>
+                  </ul>
+                  <h2 class="help-h2">Export journal</h2>
+                  <p>
+                    Every request is recorded in the journal on the same <strong>Export</strong> tab.
+                    The journal stays available after export is turned off.
+                  </p>
+                  <p>The table has four columns:</p>
+                  <ul>
+                    <li><strong>Date</strong> — the day of the request, without the time;</li>
+                    <li><strong>E-mail</strong> — the email of the user who requested the file;</li>
+                    <li><strong>Period</strong> — the start and end of the selection;</li>
+                    <li><strong>Status</strong> — “In progress” or “Completed”.</li>
+                  </ul>
+                  <p>
+                    “In progress” means the file is still being prepared. “Completed” means the request
+                    was processed and the email with the archive was sent. If the status stays
+                    “In progress” for a long time, contact support.
+                  </p>
+                </div>
               </div>
             </div>
       <section class="cta">
