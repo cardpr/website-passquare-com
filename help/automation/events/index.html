@@ -124,7 +124,7 @@
                   <p>An event is accepted only after its key exists in the cabinet. Send a POST request to <strong>https://core.passquare.com/api/v2/crm/event/send</strong>.</p>
                   <p>The request body includes:</p>
                   <ul>
-                    <li><strong>app_key</strong> — the private key from Settings → API;</li>
+                    <li><strong>app_key</strong> — the private key from Integration → API;</li>
                     <li>exactly one customer identifier: <strong>phone</strong>, <strong>card</strong>, or <strong>remoteId</strong>;</li>
                     <li><strong>event</strong> — the event key;</li>
                     <li><strong>value</strong> — an optional string of up to 100 characters, such as a step or a product name.</li>
@@ -137,7 +137,7 @@
 }</pre>
                   <p>Instead of a phone number, you can send the card number in card or the CRM customer id in remoteId. Send only one identifier in a request.</p>
                   <p>You can test an event without your own integration. In the event list, open the test, enter a phone number, card number, or remoteId, and a value if you need one. A successful send is added to the customer history.</p>
-                  <p>Requests follow the cabinet API limits. You can see them in Settings → API.</p>
+                  <p>Requests follow the cabinet API limits. You can see them in Integration → API.</p>
                   <h2 class="help-h2">Where to see the result</h2>
                   <p>Open the customer card and the event history tab. The table shows the key, value, source, and date. Events sent from the cabinet and events sent through the API appear in the same history.</p>
                 </div>
