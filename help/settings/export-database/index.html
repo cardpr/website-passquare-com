@@ -15,10 +15,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="yandex-verification" content="533e82f833c83b26" />
     <title>Export the customer database</title>
-    <meta name="description" content="How to allow a CSV export of the customer database, request the file, and read the export journal." />
+    <meta name="description" content="How to allow a CSV export of the customer database, fill in the journal details, save the archive password, and read the export journal." />
     <meta property="og:url" content="https://passquare.com/help/settings/export-database" />
     <meta property="og:title" content="Export the customer database" />
-    <meta property="og:description" content="How to allow a CSV export of the customer database, request the file, and read the export journal." />
+    <meta property="og:description" content="How to allow a CSV export of the customer database, fill in the journal details, save the archive password, and read the export journal." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://passquare.com/assets/images/passquare-cab.png" />
     <link rel="canonical" href="https://passquare.com/help/settings/export-database" />
@@ -156,6 +156,12 @@
                     <li>Make sure export is allowed.</li>
                     <li>Under the journal, click <strong>Export CSV</strong>.</li>
                     <li>Set <strong>Start of selection</strong> and <strong>End of selection</strong>.</li>
+                    <li>
+                      Fill in the journal details: <strong>Your full name</strong>,
+                      <strong>Your job title</strong>, <strong>Your phone number</strong>, and
+                      <strong>Purpose of the personal data export</strong>. All four fields are required.
+                      The purpose must be at least 100 characters.
+                    </li>
                     <li>Check the agreement to request personal data and click <strong>Export</strong>.</li>
                   </ol>
                   <p>Request limits:</p>
@@ -171,9 +177,15 @@
                   </p>
                   <p>
                     The finished archive arrives within a few hours at the email address you used to
-                    sign in. It is a ZIP archive containing <strong>export.csv</strong>. The archive
-                    name includes the period, for example
+                    sign in. It is a password-protected ZIP archive containing <strong>export.csv</strong>.
+                    The archive name includes the period, for example
                     <strong>export_01-09-2026_28-09-2026.zip</strong>.
+                  </p>
+                  <h2 class="help-h2">Archive password</h2>
+                  <p>
+                    Right after the request, a dialog shows the password. Copy it and save it: the
+                    password is shown only once. It is not included in the email or in the export
+                    journal. The archive will not open without it.
                   </p>
                   <h2 class="help-h2">What is in the file</h2>
                   <p>The CSV includes columns for:</p>
@@ -193,13 +205,19 @@
                     Every request is recorded in the journal on the same <strong>Export</strong> tab.
                     The journal stays available after export is turned off.
                   </p>
-                  <p>The table has four columns:</p>
+                  <p>The columns appear in this order:</p>
                   <ul>
+                    <li><strong>Status</strong> — “In progress” or “Completed”;</li>
                     <li><strong>Date</strong> — the day of the request, without the time;</li>
+                    <li><strong>Full name</strong> — the name entered with the request;</li>
+                    <li><strong>Job title</strong>;</li>
                     <li><strong>E-mail</strong> — the email of the user who requested the file;</li>
                     <li><strong>Period</strong> — the start and end of the selection;</li>
-                    <li><strong>Status</strong> — “In progress” or “Completed”.</li>
+                    <li><strong>Purpose</strong> — the export purpose text.</li>
                   </ul>
+                  <p>
+                    The phone number is stored with the request and is not shown in the journal table.
+                  </p>
                   <p>
                     “In progress” means the file is still being prepared. “Completed” means the request
                     was processed and the email with the archive was sent. If the status stays
