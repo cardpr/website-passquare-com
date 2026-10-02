@@ -129,6 +129,8 @@
             <a class="api-nav__method" href="#push-create">1.5 push/create</a>
             <a class="api-nav__method" href="#push-send">1.6 push/send</a>
             <a class="api-nav__method" href="#event-send">1.7 event/send</a>
+            <a class="api-nav__method" href="#balance-add">1.8 balance/add</a>
+            <a class="api-nav__method" href="#balance-deduct">1.9 balance/deduct</a>
             <div class="api-nav__group">Passquare → your system</div>
             <a class="api-nav__method" href="#createCustomer">2.1 createCustomer</a>
             <a class="api-nav__method" href="#readBalance">2.2 readBalance</a>
@@ -151,6 +153,8 @@
                 <option value="push-create">1.5 push/create</option>
                 <option value="push-send">1.6 push/send</option>
                 <option value="event-send">1.7 event/send</option>
+                <option value="balance-add">1.8 balance/add</option>
+                <option value="balance-deduct">1.9 balance/deduct</option>
                 <option value="inbound">Passquare → your system</option>
                 <option value="createCustomer">2.1 createCustomer</option>
                 <option value="readBalance">2.2 readBalance</option>
@@ -334,7 +338,9 @@
                 <div class="api-label">Update balance</div>
                 <p>
                   If the template has a push bound to balance change, the customer also sees a
-                  lock-screen message.
+                  lock-screen message. To add or deduct an amount, use
+                  <a href="#balance-add">balance/add</a> and
+                  <a href="#balance-deduct">balance/deduct</a>.
                 </p>
                 <div class="api-code">
                   <pre><code class="language-json">{
@@ -553,6 +559,106 @@
                 <div class="api-code">
                   <pre><code class="language-json">{
   "success": true
+}</code></pre>
+                </div>
+              </article>
+
+              <article class="api-method" id="balance-add">
+                <a name="balance/add"></a>
+                <div class="api-method__head">
+                  <h3>1.8 balance/add</h3>
+                </div>
+                <p>
+                  Add to a customer's bonus balance. Same operation as Add on the client card.
+                  <code>app_key</code>, <code>sum</code> and one customer identifier are required:
+                  <code>phone</code>, <code>card</code> or <code>remoteId</code>.
+                  <code>sum</code> is a positive amount added to the current balance.
+                  Phone is in E.164 format. If the template has a push bound to balance change,
+                  the customer also sees a lock-screen message.
+                </p>
+                <div class="api-url">
+                  <span class="api-badge">POST</span>
+                  https://core.passquare.com/api/v2/crm/balance/add
+                </div>
+                <div class="api-label">Request with phone</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "app_key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "phone": "+420000000001",
+  "sum": 50.00
+}</code></pre>
+                </div>
+                <div class="api-label">Request with card</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "app_key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "card": "100099",
+  "sum": 50.00
+}</code></pre>
+                </div>
+                <div class="api-label">Request with remoteId</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "app_key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "remoteId": "crm-42",
+  "sum": 50.00
+}</code></pre>
+                </div>
+                <div class="api-label">Response</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "success": true,
+  "balance": 150.00
+}</code></pre>
+                </div>
+              </article>
+
+              <article class="api-method" id="balance-deduct">
+                <a name="balance/deduct"></a>
+                <div class="api-method__head">
+                  <h3>1.9 balance/deduct</h3>
+                </div>
+                <p>
+                  Deduct a customer's bonus balance. Same operation as Deduct on the client
+                  card. <code>app_key</code>, <code>sum</code> and one customer identifier are
+                  required: <code>phone</code>, <code>card</code> or <code>remoteId</code>.
+                  <code>sum</code> is a positive amount subtracted from the current balance.
+                  Phone is in E.164 format. If the template has a push bound to balance change,
+                  the customer also sees a lock-screen message.
+                </p>
+                <div class="api-url">
+                  <span class="api-badge">POST</span>
+                  https://core.passquare.com/api/v2/crm/balance/deduct
+                </div>
+                <div class="api-label">Request with phone</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "app_key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "phone": "+420000000001",
+  "sum": 50.00
+}</code></pre>
+                </div>
+                <div class="api-label">Request with card</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "app_key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "card": "100099",
+  "sum": 50.00
+}</code></pre>
+                </div>
+                <div class="api-label">Request with remoteId</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "app_key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "remoteId": "crm-42",
+  "sum": 50.00
+}</code></pre>
+                </div>
+                <div class="api-label">Response</div>
+                <div class="api-code">
+                  <pre><code class="language-json">{
+  "success": true,
+  "balance": 50.00
 }</code></pre>
                 </div>
               </article>
