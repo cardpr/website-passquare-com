@@ -573,6 +573,10 @@
                   <code>app_key</code>, <code>sum</code> and one customer identifier are required:
                   <code>phone</code>, <code>card</code> or <code>remoteId</code>.
                   <code>sum</code> is a positive amount added to the current balance.
+                  On the built-in customer base, Passquare changes the balance itself. If an
+                  external CRM is connected, Passquare sends it the
+                  <a href="#addBalance">addBalance</a> hook, the same way the Add button does,
+                  and then updates the pass from the CRM.
                   Phone is in E.164 format. If the template has a push bound to balance change,
                   the customer also sees a lock-screen message.
                 </p>
@@ -623,6 +627,10 @@
                   card. <code>app_key</code>, <code>sum</code> and one customer identifier are
                   required: <code>phone</code>, <code>card</code> or <code>remoteId</code>.
                   <code>sum</code> is a positive amount subtracted from the current balance.
+                  On the built-in customer base, Passquare changes the balance itself. If an
+                  external CRM is connected, Passquare sends it the
+                  <a href="#addBalance">addBalance</a> hook, the same way the Deduct button does,
+                  and then updates the pass from the CRM.
                   Phone is in E.164 format. If the template has a push bound to balance change,
                   the customer also sees a lock-screen message.
                 </p>
